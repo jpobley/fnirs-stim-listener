@@ -55,5 +55,5 @@ def start():
 # run application
 ######
 
-run(host='localhost', port=1234)
+run(host='127.0.0.1', port=1234)
 
