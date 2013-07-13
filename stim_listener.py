@@ -40,6 +40,20 @@ def setup_log(pID):
 # define route
 ######
 
+@route('/stim')
+def start():
+    state = request.query.state
+    aux = state_codes[state]
+    msg = request.query.msg
+    if state == "start":
+        pID = request.query.pID
+        setup_log(pID)
+    log_msg = "%f\t%s" % (time.time(), msg)
+    logging.debug(log_msg)
+    
 ######
 # run application
 ######
+
+run(host='localhost', port=1234)
+

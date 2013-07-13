@@ -1,0 +1,11 @@
+1373296487.745540	Video task started
+1373296494.710930	Seeing Catapulten
+1373296502.828394	recording Catapulten
+1373296507.389035	stopped recording Catapulten
+1373296517.462357	Seeing Box Monsters
+1373296523.619469	recording Box Monsters
+1373296526.884852	stopped recording Box Monsters
+1373296533.737624	Seeing Crack That Vault
+1373296550.309940	recording Crack That Vault
+1373296554.116289	stopped recording Crack That Vault
+1373296559.990404	Video task ended
