@@ -18,7 +18,7 @@ Usage
 -------------------
 
 Open the <code>stim_listenter.py</code> file from within PsychoPy and click "Run." Alternatively, the script will from from the command line:
-<pre><code>python stim-listener.py</code></pre>
+<pre><code>python stim_listener.py</code></pre>
 The server listens at http://127.0.0.1:1234. The script will check for a "logs" directory and create one, if necessary.
 
 Each log file is a tab-separated list of time and events. For example:
