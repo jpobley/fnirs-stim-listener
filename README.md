@@ -12,14 +12,14 @@ Our lab is doing a study using [functional Near Infrared Spectroscopy](http://fn
 -   the task ends
 The fNIRS machine has 4 serial ports that receive signals. The difficulty is figuring out how to get the local machine that runs the fNIRS software to send this stim marks when a participant is working through a task on a remote site.
 
-We came up with the idea of having a small Python server running at the localhost and using jQuery's getJSONP() method to send GET requests to a route on the localhost. The local server then parses the query paramenters and sends a signal to the appropriate serial port. We wanted the server to be run inside of [PsychoPy](http://www.psychopy.org "PsychoPy") so that it was easy for RA's to use. However, PsychoPy wasn't able to import the WSGIRef Python module for some reason. Our lab manager had the great idea of copying the BaseHTTPServer module into the local directory where the script would run. This solved the issue of PsychoPy being unable to run a server.
+We came up with the idea of having a small Python server running at the localhost and using jQuery's getJSON() method to send GET requests to a route on the localhost. The local server then parses the query paramenters and sends a signal to the appropriate serial port. We wanted the server to be run inside of [PsychoPy](http://www.psychopy.org "PsychoPy") so that it was easy for RA's to use. However, PsychoPy wasn't able to import the WSGIRef Python module for some reason. Our lab manager had the great idea of copying the BaseHTTPServer module into the local directory where the script would run. This solved the issue of PsychoPy being unable to run a server.
 
 Usage
 -------------------
 
 Open the <code>stim_listenter.py</code> file from within PsychoPy and click "Run." Alternatively, the script will from from the command line:
 <pre><code>python stim-listener.py</code></pre>
-The script will check for a "logs" directory and create one, if necessary.
+The server listens at http://127.0.0.1:1234. The script will check for a "logs" directory and create one, if necessary.
 
 Each log file is a tab-separated list of time and events. For example:
 <pre>
@@ -29,7 +29,8 @@ Each log file is a tab-separated list of time and events. For example:
 1373296507.389035 stimuli task stops
 1373296559.990404 task ended
 </pre>
+
 Authors
 -------------------
-jpobley
 mbod
+jpobley
