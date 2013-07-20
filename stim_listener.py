@@ -1,3 +1,4 @@
+#!/usr/bin/python
 ######
 # Local server for fNIRS trials that records stim marks and timings
 ######
