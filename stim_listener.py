@@ -26,6 +26,9 @@ class StimRequestHTTPHandler(BaseHTTPServer.BaseHTTPRequestHandler):
                    setup_log(pID)
                log_msg = "%f\t%s" % (time.time(), msg)
                logging.debug(log_msg)
+               ser.write(aux)
+               if state == "stop":
+                   ser.close()
                self.send_response(200)
 
            except:
@@ -53,6 +56,11 @@ def run_server():
 
 state_codes = {"recording":2, "stopped recording":4, "start": 8, "stop": 8, "new_stim": 1}
 
+######
+# serial port object
+######
+
+ser = serial.Serial(3, 19200, timeout=1)
 
 ######
 # function to create unique log file for this session
