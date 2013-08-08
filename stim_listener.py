@@ -27,6 +27,7 @@ class StimRequestHTTPHandler(BaseHTTPServer.BaseHTTPRequestHandler):
                log_msg = "%f\t%s" % (time.time(), msg)
                logging.debug(log_msg)
                ser.write(aux)
+               ser.write(aux)
                if state == "stop":
                    ser.close()
                self.send_response(200)
